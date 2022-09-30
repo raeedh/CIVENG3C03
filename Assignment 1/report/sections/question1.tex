@@ -1,0 +1,51 @@
+\section*{Question 1}
+Using the graphic method of solution, find the optimal solution for the following LP model:
+
+Minimize:
+\begin{equation*}
+	\text{Z} = 2200 -7\text{X}_1 - 2\text{X}_2
+\end{equation*}
+Subject to:
+\begin{gather}
+	\text{X}_1 <= 100 \\
+	3\text{X}_1 + 5\text{X}_2 <= 900 \\
+	4\text{X}_1 + 2\text{X}_2 <= 600 \\
+	\text{X}_1 >= 0, \text{X}_2 >= 0 \nonumber
+\end{gather}
+
+The graphical solution to this problem is found in Figure~\ref{fig:q1}. The optimal value for Z is approximately $184.857$, when X$_1 = 85.714$ and X$_2 = 128.571$. 
+
+\begin{figure}[htp]
+\centering
+\begin{tikzpicture}% coordinates%\begin{}[]%\addplot coordinates {};%\end{}%\end{}
+	\begin{axis}[
+		title = Graphical Solution to Question 1,
+		width = 0.9\textwidth,
+		xmin = 0, xmax = 300,
+		ymin = 0, ymax = 300,
+		axis lines = center,
+		grid,
+		grid style = {densely dashed},
+		xlabel = $\text{X}_1$,
+		ylabel = $\text{X}_2$
+	]
+	%domain=0:300,
+	\addplot +[mark=none, red, name path=A] coordinates {(100, 0) (100, 300)}; \addlegendentry{$\text{X}_1 <= 100$}
+	%\addplot [draw=red,thick, domain=0:100] {100}; \addlegendentry{$\text{X}_1 <= 100$}
+	\addplot +[mark=none, blue, name path=B] coordinates {(0, 180) (300, 0)}; \addlegendentry{$3\text{X}_1 + 5\text{X}_2 <= 900$}
+	\addplot +[mark=none, orange, name path=C] coordinates {(0, 300) (150, 0)}; \addlegendentry{$4\text{X}_1 + 2\text{X}_2 <= 600$}
+	
+	\path[name path=xaxis] (\pgfkeysvalueof{/pgfplots/xmin}, 0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
+	\addplot[pattern color = green, pattern=north east lines] fill between[of=B and xaxis, soft clip={domain=0:85.714}]; \addlegendentry{Feasible region}
+	\addplot[pattern color = green, pattern=north east lines, forget plot] fill between[of=C and xaxis, soft clip={domain=85.714:100}]; % \addlegendentry{Feasible region}
+
+	% \addplot +[mark=none, black, name path=D] coordinates {(0, 300) (150, 0)}; % \addlegendentry{$4\text{X}_1 + 2\text{X}_2 <= 600$}
+	\addplot +[mark=none, gray, thick, dashed,name path=Z1] coordinates {(0, 450) (128.571, 0)};  \addlegendentry{$\text{Z} = 1300$}
+	\addplot +[mark=none, black, very thick,name path=Z2] coordinates {(0, 428.571428571) (122.448979592, 0)}; \addlegendentry{$\text{Z} = 1384.857$}
+	\end{axis}
+\end{tikzpicture}
+\caption{Question 1: Graphical Solution}
+\label{fig:q1}
+\end{figure}
+
+\clearpage

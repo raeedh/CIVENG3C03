@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\graphicspath{{./../figures/}}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{titlesec}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns}
+\pgfplotsset{compat = newest}
+
+\titleformat*{\section}{\large\bfseries}
+%\allowdisplaybreaks
+
+% remove vertical spacing above top figure
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
+%
+
+\title{CIVENG 3C03 Assignment 1}
+\author{
+    Raeed Hassan \\
+    hassam41
+}
+
+\begin{document}
+
+\maketitle
+\clearpage
+
+\input{question1.tex}
+
+\input{question2.tex}
+
+\input{question3.tex}
+
+\end{document}
