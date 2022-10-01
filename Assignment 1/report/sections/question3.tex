@@ -4,35 +4,43 @@
 \item
 From the Simplex Tableau provided, we can determine that the canonical form for the Linear Programming problem is:
 
-Minimize:\\
-$\text{C} = 250 - 3\text{X}_1 - 8\text{X}_2$
+Minimize:
+\begin{equation*}
+	\text{C} = 250 - 3\text{X}_1 - 8\text{X}_2
+\end{equation*}
 
-Subject to:\\
-$4\text{X}_1 + \text{X}_2 + \text{S}_1 = 40$ \\
-$3\text{X}_1 + 5\text{X}_2 + \text{S}_2 = 75$ \\
-$\text{X}_2 + \text{S}_3 = 13$ \\
-$\text{X}_1, \text{X}_2, \text{S}_1, \text{S}_2, \text{S}_3 \geq 0$
+Subject to:
+\begin{gather*}
+	4\text{X}_1 + \text{X}_2 + \text{S}_1 = 40 \\
+	3\text{X}_1 + 5\text{X}_2 + \text{S}_2 = 75 \\
+	\text{X}_2 + \text{S}_3 = 13 \\
+	\text{X}_1, \text{X}_2, \text{S}_1, \text{S}_2, \text{S}_3 \geq 0
+\end{gather*}
 
 This means the LP model used to represent the LP problem is:
 
-Minimize:\\
-$\text{C} = 250 - 3\text{X}_1 - 8\text{X}_2$
+Minimize:
+\begin{equation*}
+	\text{C} = 250 - 3\text{X}_1 - 8\text{X}_2
+\end{equation*}
 
-Subject to:\\
-%\begin{gather*}
-$4\text{X}_1 + \text{X}_2 \leq 40$ \\
-$3\text{X}_1 + 5\text{X}_2 \leq 75$ \\
-$\text{X}_2 \leq 13$ \\
-$\text{X}_1, \text{X}_2 \geq 0$
-%\end{gather*}
+Subject to:
+\begin{gather*}
+	4\text{X}_1 + \text{X}_2 \leq 40 \\
+	3\text{X}_1 + 5\text{X}_2 \leq 75 \\
+	\text{X}_2 \leq 13 \\
+	\text{X}_1, \text{X}_2 \geq 0
+\end{gather*}
 
 	
 \item
 The optimal production policy for the [$\text{X}_1 = 3.33, \text{X}_2 = 13$]. The corresponding cost of the optimal production policy is $\text{C} = 250 - (3*3.33) - (13*8) = 136$.
 
 \item
-Since $\text{S}_2, \text{S}_3 = 0$, the binding constraints are:\\
-$3\text{X}_1 + 5\text{X}_2 \leq 75$ \\
-$\text{X}_2 \leq 13$ \\
+Since $\text{S}_2, \text{S}_3 = 0$, the binding constraints are:
+\begin{gather*}
+	3\text{X}_1 + 5\text{X}_2 \leq 75 \\
+	\text{X}_2 \leq 13
+\end{gather*}
 
 \end{enumerate}
