@@ -7,7 +7,7 @@ The operating cost per week is $5400 - 15$X$_1 - 20$X$_2 - 10$X$_3$, and the che
 Total cost (\$/per week) $ = 5400 - (15 - 2.5\cdot0.98 - 2\cdot0.51)$X$_1$ - $(20 - 2.5\cdot0.98 - 3.5\cdot0.51)$X$_2$ - $(10 - 2\cdot0.98 - 1.5\cdot0.51)$X$_3$ \\
 Total cost (\$/per week) $ = 5400 - 11.53$X$_1$ - $15.765$X$_2$ - $7.275$X$_3$
 
-Minimize: Z$ = 5400 - 11.53$X$_1$ - $15.765$X$_2$ - $7.275$X$_3$ (Objective Function)
+Minimize: Z $ = 5400 - 11.53$X$_1$ - $15.765$X$_2$ - $7.275$X$_3$ (Objective Function)
 
 Subject to:\\
 $6\text{X}_1 + 8\text{X}_2 + 4\text{X}_3 \leq 1000$ (Total hour constraint) \\
@@ -19,14 +19,19 @@ $\text{X}_1, \text{X}_2, \text{X}_3 \geq 0$ \\
 
 The canonical form of the model is expressed as follows:
 
-Minimize: Z$ = 5400 - 11.53$X$_1$ - $15.765$X$_2$ - $7.275$X$_3$
+Minimize:
+\begin{equation*}
+	\text{Z} = 5400 - 11.53\text{X}_1 - 15.765\text{X}_2 - 7.275\text{X}_3
+\end{equation*}
 
-Subject to:\\
-$6\text{X}_1 + 8\text{X}_2 + 4\text{X}_3 + S_1 = 1000$ \\
-$2.5\text{X}_1 + 2.5\text{X}_2 + 2\text{X}_3 + S_2 = 380$ \\
-$2\text{X}_1 + 3.5\text{X}_2 + 1.5\text{X}_3 + S_3 = 400 $ \\
-$\text{X}_1 + S_4 = 50$ \\
-$\text{X}_1, \text{X}_2, \text{X}_3, \text{S}_1, \text{S}_2, \text{S}_3, \text{S}_4 \geq 0$ \\
+Subject to:
+\begin{gather*}
+	6\text{X}_1 + 8\text{X}_2 + 4\text{X}_3 + S_1 = 1000 \\
+	2.5\text{X}_1 + 2.5\text{X}_2 + 2\text{X}_3 + S_2 = 380 \\
+	2\text{X}_1 + 3.5\text{X}_2 + 1.5\text{X}_3 + S_3 = 400 \\
+	\text{X}_1 + S_4 = 50 \\
+	\text{X}_1, \text{X}_2, \text{X}_3, \text{S}_1, \text{S}_2, \text{S}_3, \text{S}_4 \geq 0
+\end{gather*}
 
 \begin{enumerate}
 
@@ -34,13 +39,17 @@ $\text{X}_1, \text{X}_2, \text{X}_3, \text{S}_1, \text{S}_2, \text{S}_3, \text{S
 The Simplex Tableau for this problem can be seen in Table~\ref{tab:q2}. The solution was found in three iterations of the Simplex method. The optimal weekly production of the three paint types is $[\text{X}_1 = 50, \text{X}_2 = 75, \text{X}_3 = 25]$. The corresponding production cost of the optimal production policy is $\text{Z} = 5400 - (11.53 \cdot 50) - (15.765 \cdot 75) - (7.275 \cdot 25) = 3459.25$.
 
 \item
-Since $\text{S}_1, \text{S}_3, \text{S}_4 = 0$, the binding constraints are:\\
-$6\text{X}_1 + 8\text{X}_2 + 4\text{X}_3 \leq 1000$ \\
-$2\text{X}_1 + 3.5\text{X}_2 + 1.5\text{X}_3 \leq 400 $ \\
-$\text{X}_1 \leq 50$
+Since $\text{S}_1, \text{S}_3, \text{S}_4 = 0$, the binding constraints are:
+\begin{gather*}
+	6\text{X}_1 + 8\text{X}_2 + 4\text{X}_3 \leq 1000 \\
+	2\text{X}_1 + 3.5\text{X}_2 + 1.5\text{X}_3 \leq 400 \\
+	\text{X}_1 \leq 50
+\end{gather*}
 
-The non-binding constraint is:\\
-$2.5\text{X}_1 + 2.5\text{X}_2 + 2\text{X}_3 \leq 380$
+The non-binding constraint is:
+\begin{equation*}
+	2.5\text{X}_1 + 2.5\text{X}_2 + 2\text{X}_3 \leq 380
+\end{equation*}
 	
 \end{enumerate}
 
