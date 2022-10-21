@@ -1,0 +1,30 @@
+\section*{Question 1}
+If the number of bronze, silver, and gold passes issued are X$_1$, X$_2$, and X$_3$, then the profit margins for the park can be represented as:
+\begin{equation*}
+	\text{Max: } \text{Z} = \text{X}_1 + 3\text{X}_2 + 10\text{X}_3
+\end{equation*}
+The passes are also subject to the following constraints:\\
+X$_1$ + X$_2$ + 3.5X$_3 \leq 22000$ (administrative working units constraint)\\
+X$_1 \leq 10000$ (maximum units per type)\\
+X$_2 \leq 10000$ (maximum units per type)\\
+X$_3 \leq 10000$ (maximum units per type)\\
+X$_1 \geq 1200$ (minimum number of bronze tickets)\\
+X$_1$, X$_2$, X$_3 \geq 0$ (non-negativity constraint)
+
+From the objective function and the constraints, we can represent the problem in canonical form:
+
+Minimize:
+\begin{equation*}
+	\text{Z}^* = -\text{X}_1 - 3\text{X}_2 - 10\text{X}_3 + \text{MA}_1
+\end{equation*}
+Subject to:
+Subject to:
+\begin{gather*}
+	\text{X}_1 + \text{X}_2 + 3.5\text{X}_3 + \text{S}_1 = 22000 \\
+	\text{X}_1 + \text{S}_2 = 10000 \\
+	\text{X}_2 + \text{S}_3 = 10000 \\
+	\text{X}_3 + \text{S}_4 = 10000 \\
+	\text{X}_1 - \text{E}_1 + \text{A}_1 = 1200 \\
+	\text{X}_1, \text{X}_2, \text{X}_3, \text{S}_1, \text{S}_2, \text{S}_3, \text{S}_4, \text{E}_1, \text{A}_1 \geq 0
+\end{gather*}
+
