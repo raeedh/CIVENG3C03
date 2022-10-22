@@ -1,2 +1,85 @@
 \section*{Question 3}
-To determine if the current production policy can be continued, we check the sensitivity of the optimal solution due to the changes in each of the cost coefficients. However, this is not possible to calculate with the information provided, as the final iteration of the simplex tableau does not provide the C$^i$ values for the final iteration, and this cannot be calculated without the previous iteration.
+To determine if the current production policy can be continued, we check the sensitivity of the optimal solution due to the changes in each of the cost coefficients. To determine this, we must first calculate the $\Delta Z_j$ values for the non-basic variables as done in Table~\ref{tab:q3}.
+
+\begin{table}[htp]
+	\centering
+	\caption{Question 3: $\Delta Z_j$ calculation}
+	\resizebox{\textwidth}{!}{
+	\begin{tabular}{|c|c||c|c|c|c|c|c|c|c|}
+	\hline
+	\multirow{2}{*}{Baisc Variables} & C\textsubscript{j}     & -2 & -2.5 & -5 & 0    & 0    & 0    &	0    \\ \cline{2-9}
+	& b\textsubscript{i}      & X\textsubscript{1}     & X\textsubscript{2}     & X\textsubscript{3}    & S\textsubscript{1}    & S\textsubscript{2}   &  S\textsubscript{4}	&	S\textsubscript{4} \\ \hline\hline
+	X\textsubscript{1} & 17.71					  & 1      & 0      & 0		& 1.14  & 0     & -0.29	& -2.29	 \\ \hline
+	S\textsubscript{2} & 225.54 				  & 0	   & 0      & 0		& -2.57 & 1     & 0.54	& 4.54	 \\ \hline
+	X\textsubscript{2} & 12.34   				  & 0      & 1      & 0		& -0.57 & 0     & 0.34	& 0.34	 \\ \hline
+	X\textsubscript{3} & 25   					  & 0      & 0      & 1		& 0     & 0     & 0		& 1	 	 \\ \hline
+	   				 & $\Delta$Z\textsubscript{j} & 	   & 	    & 		& 0.855 &       & 0.27  & 1.27	 \\ \hline
+	\end{tabular} 
+	}
+	\label{tab:q3}
+\end{table}
+
+We can use this information to determine the acceptable range of each cost/profit coefficient.
+
+For $\text{C}^1$, the allowable range is $1.25 \leq \text{C}^1 \leq 2.55$.
+\begin{align*}
+\text{Max }\text{C}^1 &= -2 + \text{min}
+\begin{cases}
+	\frac{0.855}{1.14} = 0.75 \\
+	\text{ignore because } a_{ij} < 0 \\
+	\text{ignore because } a_{ij} < 0
+\end{cases}\\
+&= -2 + 0.75 = -1.25\\
+\text{Min }\text{C}^1 &= -2 + \text{max}
+\begin{cases}
+	\text{ignore because } a_{ij} > 0 \\
+	\frac{0.27}{-0.29} = -0.93 \\
+	\frac{1.27}{-2.29} = -0.55
+\end{cases}\\
+&= -2 - 0.55 = -2.55
+\end{align*}
+
+For $\text{C}^2$, the allowable range is $1.71 \leq \text{C}^2 \leq 4$.
+\begin{align*}
+\text{Max }\text{C}^2 &= -2.5 + \text{min}
+\begin{cases}
+	\text{ignore because } a_{ij} < 0 \\
+	\frac{0.27}{0.34} = 0.79 \\
+	\frac{1.27}{0.34} = 3.74
+\end{cases}\\
+&= -2.5 + 0.79 = -1.71\\
+\text{Min }\text{C}^2 &= -2.5 + \text{max}
+\begin{cases}
+	\frac{0.855}{-0.57} = -1.5 \\
+	\text{ignore because } a_{ij} > 0 \\
+	\text{ignore because } a_{ij} > 0
+\end{cases}\\
+&= -2.5 - 1.5 = -4
+\end{align*}
+
+For $\text{C}^3$, the allowable range is $3.73 \leq \text{C}^3 \leq \infty$.
+\begin{align*}
+\text{Max }\text{C}^3 &= -5 + \text{min}
+\begin{cases}
+	\frac{0.855}{0} = \infty \\
+	\frac{0.27}{0} = \infty \\
+	\frac{1.27}{1} = 1.27
+\end{cases}\\
+&= -5 + 1.27 = -3.73\\
+\text{Min }\text{C}^3 &= -5 + \text{max}
+\begin{cases}
+	\frac{0.855}{0} = \infty \\
+	\frac{0.27}{0} = \infty \\
+	\text{ignore because } a_{ij} > 0  
+\end{cases}\\
+&= -5 - \infty = -\infty
+\end{align*}
+
+With the acceptable ranges for profit coefficients calculated, we can determine if the profit coefficients can be changed without changing the optimal solution. We can see that these new unit profit coefficients all fall within the acceptable range for each cost coefficient:
+\begin{gather*}	
+	1.25 \leq 1.60 \leq 2.55 \\
+	1.71 \leq 1.90 \leq 4 \\
+	3.73 \leq 3.75 \leq \infty
+\end{gather*}
+
+Therefore, the company does not need to change its production policy and can continue with its current production policy.
