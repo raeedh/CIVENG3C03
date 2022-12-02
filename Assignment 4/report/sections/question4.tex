@@ -1,0 +1,55 @@
+\section*{Question 3}
+\begin{enumerate}[label=(\alph*)]
+\item
+The probability that less than three busses arrive at the stop in a given hour is:
+\begin{align*}
+	P(x < 3) &= P(0) + P(1) + P(2) \\
+	&= \frac{e^{-m}m^0}{0!} + \frac{e^{-m}m^1}{1!} + \frac{e^{-m}m^2}{2!} \\
+	&= \frac{e^{-4}4^0}{0!} + \frac{e^{-4}4^1}{1!} + \frac{e^{-4}4^2}{2!} \\
+	&= \frac{e^{-4}4^0}{0!} + \frac{e^{-4}4^1}{1!} + \frac{e^{-4}4^2}{2!} \\
+	P(x < 3) &= 0.2381
+\end{align*}
+
+\item
+The probability that the passenger will wait less than 13 minutes for the next bus is:
+\begin{align*}
+	P(h < T) &= 1 - e^{-\lambda T} \\
+	P(h < \frac{13}{60}) &= 1 - e^{-4 \times \frac{13}{60}} \\
+	P(h < \frac{13}{60}) &= 0.5796
+\end{align*}
+
+\item
+The cumulative distribution function of the waiting time at the stop is shown in Figure~\ref{fig:q3}.
+\begin{figure}[htp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+		title = {Cumulative Distribution Function of the Waiting Time at the Stop},
+		width = \textwidth,
+		%height = 150,
+		xmin = 0, xmax = 60,
+		ymin = 0, ymax = 1,
+		ylabel = Probability, xlabel = Waiting Time (minutes),
+		yticklabel style={
+		/pgf/number format/fixed,
+		/pgf/number format/precision=2
+		},
+		% scaled x ticks=false,
+		% legend pos = north east,
+		% some code for adding points
+		%nodes near coords={%
+		%\footnotesize
+		%$(\pgfmathprintnumber
+		%{\pgfkeysvalueof{/data point/x}},
+		%\pgfmathprintnumber
+		%{\pgfkeysvalueof{/data point/y}})$%
+		%},
+	]
+	\addplot table [y=p, x=t] {./data/cdf.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{Cumulative Distribution Function of Waiting Time}
+\label{fig:q3}
+\end{figure}
+
+\end{enumerate}
